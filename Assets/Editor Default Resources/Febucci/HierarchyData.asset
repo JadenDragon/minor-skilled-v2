@@ -26,7 +26,7 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 0, a: 0.08}
   separator:
     enabled: 1
-    startString: '>'
+    startString: -----
     color: {r: 0, g: 1, b: 1, a: 0.15}
   tree:
     enabled: 1
@@ -46,3 +46,9 @@ MonoBehaviour:
       - {r: 1, g: 0.75, b: 0.42, a: 1}
       - {r: 1, g: 0.46, b: 0.31, a: 1}
       - {r: 1, g: 0.35, b: 0.34, a: 1}
+    - overlayColor: {r: 0.514151, g: 0.56708497, b: 1, a: 0.04}
+      colors:
+      - {r: 0.22352943, g: 0.31764707, b: 1, a: 1}
+      - {r: 0.2235294, g: 0.57365245, b: 1, a: 1}
+      - {r: 0.25, g: 1, b: 0.98484284, a: 1}
+      - {r: 0.3382963, g: 0.764151, b: 0.2991723, a: 1}

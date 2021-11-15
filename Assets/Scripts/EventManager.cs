@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    //ClickAction event type
     public delegate void ClickAction();
+    //event variable onClicked
     public static event ClickAction onClicked;
-    // Start is called before the first frame update
 
     private void OnGUI()
     {
@@ -15,8 +16,11 @@ public class EventManager : MonoBehaviour
             //call onClicked() if not NULL
             if(onClicked != null)
             {
+                //event is used as a function to invoke the event
                 onClicked();
             }
         }
     }
+
+    
 }

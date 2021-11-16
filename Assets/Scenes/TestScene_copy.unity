@@ -1438,7 +1438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8b52f603c6104444aa9825fabdc3489, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d640b694e6647c94cb7488bdd5df328e, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1842,10 +1842,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: a8b52f603c6104444aa9825fabdc3489, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -3198,7 +3198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2132611684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3216,7 +3216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -258, y: 230}
+  m_AnchoredPosition: {x: -366, y: 288}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2132611685
@@ -3442,12 +3442,12 @@ PrefabInstance:
     - target: {fileID: 2820006363959570608, guid: a50398c94a212e44283b0de8efa21f23,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -539
+      value: -606
       objectReference: {fileID: 0}
     - target: {fileID: 2820006363959570608, guid: a50398c94a212e44283b0de8efa21f23,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 275
+      value: 252
       objectReference: {fileID: 0}
     - target: {fileID: 2820006363959570608, guid: a50398c94a212e44283b0de8efa21f23,
         type: 3}

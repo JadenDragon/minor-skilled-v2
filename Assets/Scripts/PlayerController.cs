@@ -23,10 +23,11 @@ public class PlayerController : MonoBehaviour
 
     Vector3 playerMovement;
 
-    bool playerIsGrounded;
+    //bool playerIsGrounded;
     bool isJumping;
-    float jumpVelocity = 2.0f;
-    float gravity = -9.81f;
+    float jumpVelocity = 8.0f;
+    float gravity = 9.81f;
+    private Vector3 moveDirection = Vector3.zero;
 
 
     // Start is called before the first frame update
@@ -36,7 +37,6 @@ public class PlayerController : MonoBehaviour
         charCntrl = this.GetComponent<CharacterController>();
         //transform.position = Vector3.zero;
         isJumpingHash = Animator.StringToHash("isJumping");
-        jump = Input.GetButtonDown("Jump");
     }
 
     // Update is called once per frame
@@ -84,23 +84,23 @@ public class PlayerController : MonoBehaviour
         charCntrl.SimpleMove(forward * currentSpeed);
     }
 
-    //moves withe characterController Move
+    //moves with the characterController.Move
     void characterMove()
     {
         isJumping = animator.GetBool(isJumpingHash);
 
-        playerIsGrounded = charCntrl.isGrounded;
+        /*playerIsGrounded = charCntrl.isGrounded;
         if (playerIsGrounded && playerMovement.y < 0)
         {
             playerMovement.y = 0f;
-        }
+        }*/
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        charCntrl.Move(move * Time.deltaTime * playerSpeed);
+        /*Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        charCntrl.Move(moveDirection * Time.deltaTime * playerSpeed);
 
-        if (move != Vector3.zero)
+        if (moveDirection != Vector3.zero)
         {
-            gameObject.transform.forward = move;
+            gameObject.transform.forward = moveDirection;
         }
 
             // Changes the height position of the player..
@@ -114,7 +114,24 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool(isJumpingHash, false);
 
             playerMovement.y += gravity * Time.deltaTime;
-            charCntrl.Move(playerMovement * Time.deltaTime);
+            charCntrl.Move(playerMovement * Time.deltaTime);*/
+
+        if (charCntrl.isGrounded)
+        {
+            animator.SetBool(isJumpingHash, false);
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection *= playerSpeed;
+            if (Input.GetButton("Jump"))
+            {
+                animator.SetBool(isJumpingHash, true);
+                moveDirection.y = jumpVelocity;
+            }
+        }
+
+        moveDirection.y -= gravity * Time.deltaTime;
+        charCntrl.Move(moveDirection * Time.deltaTime); 
+        //Debug.Log(moveDirection);
     }
 
 

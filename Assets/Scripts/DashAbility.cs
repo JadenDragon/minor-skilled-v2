@@ -1,14 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 [CreateAssetMenu]
 public class DashAbility : Ability
 {
-    public float dashVelocity = 7.5f;
+    //private float dashVelocity = 7.5f;
     
-    public Vector3 dashStartPosition;
-    public Vector3 dashEndPosition;
+    private Vector3 dashStartPosition;
+    private Vector3 dashEndPosition;
+
+    [SerializeField]
+    private Image i_imageCooldown;
+    [SerializeField]
+    private TMP_Text t_cooldownTime;
 
     public override void Activate(GameObject parent)
     {
@@ -17,6 +24,9 @@ public class DashAbility : Ability
         //add the animation for the slash
         //get the movement input from parent object
         //has to check if null first
+
+        //i_imageCooldown.fillAmount = 0.0f;
+        //t_cooldownTime.gameObject.SetActive(false);
 
         CharacterController character = parent.GetComponent<CharacterController>();
         Debug.Log("dashing through the snow!");
@@ -31,10 +41,12 @@ public class DashAbility : Ability
         character.Move(dashDirection + dashEndPosition);
     }
 
-    public override void CoolDown(GameObject parent) 
+    public override void CoolDown(GameObject parent)
     {
         //TODO:
         //stop the dash activation
         //reset dash to normal movement
+
+        //t_cooldownTime.gameObject.SetActive(true);
     }
 }

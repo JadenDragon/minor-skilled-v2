@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: DashSlash
   downTime: 3
-  activeTime: 1.2
-  dashVelocity: 0
+  activeTime: 1.5
+  i_imageCooldown: {fileID: 0}
+  t_cooldownTime: {fileID: 0}
